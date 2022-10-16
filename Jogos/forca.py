@@ -13,7 +13,7 @@ def jogar():
 
     enforcou = False
     acertou = False
-    erros = 0
+    tentativas = 0
 
     while(not enforcou and not acertou):
 
@@ -22,10 +22,10 @@ def jogar():
         if(chute in palavra_secreta):
             marca_chute_correto(chute, letras_acertadas, palavra_secreta)
         else:
-            erros += 1
+            tentativas += 1
             desenha_forca(erros)
 
-        enforcou = erros == 7
+        enforcou = tentativas == 7
         acertou = "_" not in letras_acertadas
 
         print(letras_acertadas)
@@ -36,47 +36,47 @@ def jogar():
         imprime_mensagem_perdedor(palavra_secreta)
 
 
-def desenha_forca(erros):
+def desenha_forca(tentativas):
     print("  _______     ")
     print(" |/      |    ")
 
-    if(erros == 1):
+    if(tentativas == 1):
         print (" |      (_)   ")
         print (" |            ")
         print (" |            ")
         print (" |            ")
 
-    if(erros == 2):
+    if(tentativas == 2):
         print (" |      (_)   ")
         print (" |      \     ")
         print (" |            ")
         print (" |            ")
 
-    if(erros == 3):
+    if(tentativas == 3):
         print (" |      (_)   ")
         print (" |      \|    ")
         print (" |            ")
         print (" |            ")
 
-    if(erros == 4):
+    if(tentativas == 4):
         print (" |      (_)   ")
         print (" |      \|/   ")
         print (" |            ")
         print (" |            ")
 
-    if(erros == 5):
+    if(tentativas == 5):
         print (" |      (_)   ")
         print (" |      \|/   ")
         print (" |       |    ")
         print (" |            ")
 
-    if(erros == 6):
+    if(tentativas == 6):
         print (" |      (_)   ")
         print (" |      \|/   ")
         print (" |       |    ")
         print (" |      /     ")
 
-    if (erros == 7):
+    if (tentativas == 7):
         print (" |      (_)   ")
         print (" |      \|/   ")
         print (" |       |    ")
@@ -138,9 +138,13 @@ def inicializa_letras_acertadas(palavra):
     return ["_" for letra in palavra]
 
 def imprime_mensagem_abertura():
-    print("*********************************")
-    print("***Bem vindo ao jogo da Forca!***")
-    print("*********************************")
+   
+    print(  """
+    
+        BEM VINDO AO JOGO DA FORCA!!!!
+    
+    """)
+  
 
 def carrega_palavra_secreta():
     arquivo = open("palavras.txt", "r")
