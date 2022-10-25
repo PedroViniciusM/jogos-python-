@@ -2,7 +2,7 @@
 
 > Status do Projeto: Finalizado
 
-Para rodar esse projeto na sua márquina, por favor instale: 
+Para rodar esse projeto na sua máquina, por favor instale: 
 
 ```
 PYTHON 3.5
