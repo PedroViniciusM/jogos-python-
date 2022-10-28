@@ -48,7 +48,7 @@ def jogar():
             if(menor):
                 print('Você errou! O seu numéro foi menor que o número secreto')
             pontos_perdidos = abs(numero_secreto - chute)
-            pontos = pontos - pontos_perdidos
+            pontos -= pontos_perdidos
 
     print('FIM DE JOGO')
 
